@@ -1,0 +1,6 @@
+.secrets/
+data/
+embeddings/
+*.pt
+*.npy
+__pycache__/
