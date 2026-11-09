@@ -30,7 +30,11 @@
   Kaggle data shouldn't be redistributed anyway.
 
 ## Resume checklist (after pod restart / new session)
-1. `source /workspace/cafa6_playground/setup.sh` (reinstalls pip deps, sets KAGGLE_API_TOKEN, checks CUDA).
+1. `source /workspace/setup.sh` (pod-level, not in git): .bashrc lines, git identity (credentials file in
+   /workspace/.secrets), Claude Code install, Claude memory symlink (/workspace/.claude-memory), then calls the
+   repo's `setup.sh` (pip deps, KAGGLE_API_TOKEN, CUDA check). Idempotent.
+   On a brand-new pod: clone the repo to /workspace/cafa6_playground first; /workspace/setup.sh must be recreated
+   (template: Claude memory / this section).
 2. If /workspace/data/cafa6 is missing: `kaggle competitions download cafa-6-protein-function-prediction -p /workspace/data/cafa6` + unzip.
    If /workspace/.kaggle/access_token is missing: new token at kaggle.com/settings/api, save it there via the VSCode editor
    (never paste into chat/shell).
