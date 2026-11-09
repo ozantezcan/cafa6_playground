@@ -1,7 +1,9 @@
-torch
-torchvision
+# torch / torchvision come from the RunPod image (2.8.0+cu128) -- do NOT pip install them.
 numpy
 pandas
 scikit-learn
 tqdm
 transformers
+kaggle
+matplotlib
+jupyter

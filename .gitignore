@@ -4,3 +4,10 @@ embeddings/
 *.pt
 *.npy
 __pycache__/
+*.ipynb_checkpoints/
+.kaggle/
+# competition data / large artifacts (data lives in /workspace/data, never in git)
+*.fasta
+*.obo
+*.zip
+submission*.tsv
